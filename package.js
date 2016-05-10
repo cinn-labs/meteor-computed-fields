@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'computed-fields',
-  version: '0.0.1',
-  summary: 'Auto fields values between collection relationship with 2 ways binding',
-  git: '',
+  name: 'cinn:computed-fields',
+  version: '0.0.2',
+  summary: 'Computed fields and 2 way data binding on collections for Meteor apps',
+  git: 'https://github.com/cinn-labs/meteor-computed-fields',
   documentation: 'README.md'
 });
 

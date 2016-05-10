@@ -1,1 +1,2 @@
-Auto fields values between collection relationship with 2 ways binding
+# meteor-computed-fields
+Computed fields and 2 way data binding on collections for Meteor apps
