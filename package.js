@@ -1,6 +1,6 @@
 Package.describe({
   name: 'cinn:computed-fields',
-  version: '0.0.2',
+  version: '0.0.3',
   summary: 'Computed fields and 2 way data binding on collections for Meteor apps',
   git: 'https://github.com/cinn-labs/meteor-computed-fields',
   documentation: 'README.md'
