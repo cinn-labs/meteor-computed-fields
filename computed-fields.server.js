@@ -78,9 +78,10 @@ class ComputedFieldsTriggerable {
     return _.includes(updatedFieldNames, watchedOriginFields);
   }
 
-  getNewValue(destinationDoc, options) {
+  getNewValue(destinationDoc, mutableDoc, options) {
+    // TODO: Check if use destinationDoc or mutableDoc on getDynamicDestinationFieldValue
     if(this.usingDynamicValue) return this.getDynamicDestinationFieldValue(_.merge(options, { docId: destinationDoc._id, doc: destinationDoc }));
-    const originDocId = destinationDoc[this.relationField];
+    let originDocId = _.result(mutableDoc, this.relationField);
     const originDoc = this.OriginCollection.findOne({ _id: originDocId }, { fields: { [this.originFieldName]: 1 } });
     return _.result(originDoc, this.originFieldName);
   }
@@ -88,7 +89,7 @@ class ComputedFieldsTriggerable {
   prepareDestinationValue(destinationDoc, mutableDoc, options) {
     options = options || {};
     const { isUpdate } = options;
-    let newValue = this.getNewValue(destinationDoc, options);
+    let newValue = this.getNewValue(destinationDoc, mutableDoc, options);
     if(!!isUpdate) return mutableDoc[this.finalDestinationFieldName] = newValue;
     _.set(mutableDoc, this.finalDestinationFieldName, newValue);
   }
