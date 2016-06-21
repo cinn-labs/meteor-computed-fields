@@ -14,7 +14,7 @@ Package.onUse(function(api) {
 
   api.use('ecmascript');
   api.use('meteor-base');
-  api.use("matb33:collection-hooks@0.7.15");
+  api.use("matb33:collection-hooks@0.8.1");
 
   api.addFiles('computed-fields.common.js', both);
   api.addFiles('computed-fields.server.js', 'server');
