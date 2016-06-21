@@ -74,7 +74,7 @@ class ComputedFieldsTriggerable {
   }
 
   shouldUpdateDestinationOnOriginHook(updatedFieldNames) {
-    let watchOriginFields = _.first(_.split(this.originFieldName, '.'));
+    const watchedOriginFields = _.first(_.split(this.originFieldName, '.'));
     return _.includes(updatedFieldNames, watchedOriginFields);
   }
 
